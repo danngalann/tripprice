@@ -1,13 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-const Results = ({ price }) => {
+const Results = ({ price, due }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Current price</Text>
       <Text style={styles.price}>{price}€/l</Text>
       <Text style={styles.header}>Due</Text>
-      <Text style={styles.price}>1€</Text>
+      <Text style={styles.price}>{due.toFixed(2)}€</Text>
     </View>
   );
 };

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, TextInput, Text } from "react-native";
 
-const DistanceInput = () => {
+const DistanceInput = ({ setDistance, getDue }) => {
+
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} placeholder="Distance (km)" />
+      <TextInput
+        style={styles.input}
+        placeholder="Distance (km)"
+        keyboardType="numeric"
+        onChangeText={setDistance}
+        onEndEditing={getDue}
+      />
     </View>
   );
 };
@@ -18,7 +25,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderRadius: 10,
     flexDirection: "row",
-    padding: 10
+    padding: 10,
   },
   input: {
     fontSize: 18,
