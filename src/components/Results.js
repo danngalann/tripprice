@@ -1,11 +1,11 @@
 import React from "react";
-import { View, StyleSheet,  Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
-const Results = () => {
+const Results = ({ price }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Current price</Text>
-      <Text style={styles.price}>1€/l</Text>
+      <Text style={styles.price}>{price}€/l</Text>
       <Text style={styles.header}>Due</Text>
       <Text style={styles.price}>1€</Text>
     </View>
@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 28,
-    color: 'green',
-    marginBottom: 20
-  }
+    color: "green",
+    marginBottom: 20,
+  },
 });
 
 export default Results;
