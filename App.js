@@ -1,10 +1,12 @@
-import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import React from "react";
+import { createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation-drawer";
+
+// Context
+import { AppProvider } from "./src/context/AppContext";
 
 // Components
-import Sidebar from './src/components/Sidebar';
+import Sidebar from "./src/components/Sidebar";
 
 // Screens
 import HomeScreen from "./src/screens/HomeScreen";
@@ -13,7 +15,7 @@ import SettingsScreen from "./src/screens/SettingsScreen";
 const Navigator = createDrawerNavigator(
   {
     Home: HomeScreen,
-    Settings: SettingsScreen
+    Settings: SettingsScreen,
   },
   {
     initialRouteName: "Home",
@@ -22,8 +24,16 @@ const Navigator = createDrawerNavigator(
     defaultNavigationOptions: {
       title: "Trip Price",
     },
-    contentComponent: props => <Sidebar {...props} />
+    contentComponent: (props) => <Sidebar {...props} />,
   }
 );
 
-export default createAppContainer(Navigator);
+const App = createAppContainer(Navigator);
+
+export default () => {
+  return (
+    <AppProvider>
+      <App />
+    </AppProvider>
+  );
+};

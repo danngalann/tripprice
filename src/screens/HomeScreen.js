@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 import DistanceInput from "../components/DistanceInput";
 import Results from "../components/Results";
 
-import usePrice from "../hooks/usePrice";
+import AppContext from '../context/AppContext';
 
 const HomeScreen = () => {
 
-  const [due, setDue] = useState(0);
-  const [distance, setDistance] = useState(0);
-  const price = usePrice();
+  const context = useContext(AppContext);
+
+  // Unpack context
+  const {distance, setDistance} = context.distance;
+  const {due, setDue} = context.due;
+  const {consumption} = context.consumption;
+  const {price} = context.price;
 
   const getDue = () => {
-    console.log(distance);
     // L of gas per KM traveled
-    const consumption = 1;
-    const litresConsumed = distance * consumption;
+    const litresConsumed = distance * (Number(consumption) / 100);
 
     setDue(litresConsumed * price);
   };

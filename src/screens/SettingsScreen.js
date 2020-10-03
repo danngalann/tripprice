@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { View, StyleSheet, Text, TextInput } from "react-native";
+import AppContext from '../context/AppContext';
 
 const SettingsScreen = () => {
+
+  const context = useContext(AppContext);
+  const {consumption, setConsumption} = context.consumption;
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Settings</Text>
@@ -10,6 +15,9 @@ const SettingsScreen = () => {
         style={styles.input}
         placeholder="Consumption (l/km)"
         keyboardType="numeric"
+        onChangeText={setConsumption}
+        // onEndEditing={setConsumption}
+        value={consumption.toString()}
       />
     </View>
   );
