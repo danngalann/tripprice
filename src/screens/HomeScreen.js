@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flex: 1,
     padding: 14,
+    marginTop: 30
   },
   title: {
     fontSize: 25,

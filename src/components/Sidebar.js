@@ -6,7 +6,7 @@ import MenuItem from "./MenuItem";
 import Footer from "./Footer";
 
 const Sidebar = ({ navigation }) => {
-  const [screens, setScreens] = useState([{ name: "Home" }]);
+  const [screens, setScreens] = useState([{ name: "Home" }, {name: "Settings"}]);
 
   const openLink = () => {
     Linking.openURL("https://www.linkedin.com/in/daniel-galan-navio/");

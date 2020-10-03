@@ -8,10 +8,12 @@ import Sidebar from './src/components/Sidebar';
 
 // Screens
 import HomeScreen from "./src/screens/HomeScreen";
+import SettingsScreen from "./src/screens/SettingsScreen";
 
 const Navigator = createDrawerNavigator(
   {
-    Home: HomeScreen
+    Home: HomeScreen,
+    Settings: SettingsScreen
   },
   {
     initialRouteName: "Home",
