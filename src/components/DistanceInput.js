@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, StyleSheet, TextInput, Text } from "react-native";
+import React from "react";
+import { View, StyleSheet, TextInput } from "react-native";
 
 const DistanceInput = ({ setDistance, getDue }) => {
 
