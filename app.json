@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "How much do I owe mom in gas?",
+    "githubUrl": "https://github.com/danngalann/tripprice"
   }
 }
