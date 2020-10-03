@@ -19,6 +19,7 @@ const SettingsScreen = () => {
         // onEndEditing={setConsumption}
         value={consumption.toString()}
       />
+      <Text style={styles.legend}>Litres of gas consumed every 100km</Text>
     </View>
   );
 };
@@ -42,12 +43,15 @@ const styles = StyleSheet.create({
     height: 50,
     marginHorizontal: 25,
     marginTop: 30,
-    marginBottom: 15,
     borderRadius: 10,
     flexDirection: "row",
     padding: 10,
     fontSize: 18,
   },
+  legend: {
+    fontSize: 10,
+    alignSelf: "center"
+  }
 });
 
 export default SettingsScreen;
